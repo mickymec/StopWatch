@@ -1,0 +1,460 @@
+/*-----------------------------------*\
+  #GOOGLE FONT
+\*-----------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+
+/*-----------------------------------*\
+  #RESET ALL PADDING AND MARGIN 
+\*-----------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+/*-----------------------------------*\
+  #BODY
+\*-----------------------------------*/
+body {
+    width: 100%;
+    background-color: #202020;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+/*-----------------------------------*\
+  #CONTAINER
+\*-----------------------------------*/
+.container {
+    transform: scale(1);
+    transition: 0.2s ease;
+}
+
+.wrapper.active .container {
+    transform: scale(1.1);
+}
+
+
+/*-----------------------------------*\
+  #WRAPPER SECTION
+\*-----------------------------------*/
+/* .WRAPPER */
+.wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 320px;
+    padding: 50px 20px;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+    z-index: 4;
+}
+
+.wrapper.active {
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+}
+
+/*-----------------------------------*\
+  #EXPAND SECTION
+\*-----------------------------------*/
+.expand_restore_icon {
+    width: 250px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 0 auto;
+}
+
+.expand {
+    width: 36px;
+    height: 36px;
+    border-radius: 50px;
+    position: relative;
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+.expand:hover {
+    background: #303030c4;
+}
+
+.expand i {
+    color: #fff;
+    font-size: 20px;
+}
+.expand .right {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    rotate: -45deg;
+    transition: 0.2s ease;
+}
+.expand .left {
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+    rotate: -45deg;
+    transition: 0.2s ease;
+}
+
+.expand.active .right {
+    rotate: -225deg;
+}
+.expand.active .left {
+    rotate: 135deg;
+}
+
+
+
+/*-----------------------------------*\
+  #TIME SECTION
+\*-----------------------------------*/
+
+/* TIMER CONTAINER  */
+.timer_container {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
+}
+
+.timer_container .timer_wrapper {
+    width: 60px;
+    color: #999;
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+.timer_container .colon {
+    width: 18px;
+    color: #999;
+    font-size: 50px;
+    font-weight: 500;
+    text-align: center;
+    transition: 0.25s ease;
+}
+
+.timer_wrapper .time {
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.timer_wrapper .text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+
+/*-----------------------------------*\
+  #BUTTON SECTION
+\*-----------------------------------*/
+.buttons {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-block: 30px;
+}
+
+.buttons .btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-inline: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.play_pause {
+    color: #000;
+    background: #cc8aff;
+    border: 2px solid #cc8aff;
+    font-size: 30px;
+    padding-left: 1px;
+    transition: 0.2s ease;
+}
+.play_pause:active{
+    background: #daaaff;
+    border: 2px solid #daaaff;
+}
+
+.flag {
+    color: #ffffff70;
+    background: #30303095;
+    border: 2px solid #3a3a3a;
+    font-size: 15px;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+.flag.active {
+    pointer-events: all;
+    color: #fff;
+    background: #343434c3;
+}
+.flag:is(:hover, :active) {
+    background: #30303085;
+    border: 2px solid #3a3a3abc;
+}
+
+.reset {
+    color: #fff;
+    background: #343434c3;
+    border: 2px solid #3a3a3a;
+    font-size: 20px;
+    pointer-events: all;
+    transition: 0.2s ease;
+}
+.reset.deactive {
+    color: #ffffff70;
+    background: #30303095;
+    border: 2px solid #3a3a3a;
+    pointer-events: none;
+}
+.reset:is(:hover, :active) {
+    background: #30303085;
+    border: 2px solid #3a3a3abc;
+}
+
+
+/*-----------------------------------*\
+  #MARK SECTION
+\*-----------------------------------*/
+.mark_section {
+    width: 100%;
+    height: 350px;
+    margin: 0 auto;
+    position: fixed;
+    top: 45%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -2;
+}
+.mark_section.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+.mark_container {
+    width: 100%;
+    padding-inline: 20px;
+}
+
+.mark_container .mark_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.mark_header .title {
+    width: 50%;
+    color: #fff;
+    border-bottom: 2px solid #3a3a3a;
+    font-size: 15px;
+    font-weight: 400;
+    padding-bottom: 15px;
+}
+
+.mark_list {
+    width: 100%;
+    height: 300px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: mandatory;
+    scroll-snap-align: start;
+}
+.mark_list::-webkit-scrollbar { width: 7px;
+}
+.mark_list::-webkit-scrollbar-track { 
+    background-color: #303030;
+    border-radius: 50px;
+}
+.mark_list::-webkit-scrollbar-thumb {
+    background-color: #555; 
+    border-radius: 50px;
+}
+
+.mark_list li {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding-block: 10px;
+    margin-block: 5px;
+}
+
+li .mark_data {
+    width: 50%;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+/*-----------------------------------*\
+  #OVERLAY
+\*-----------------------------------*/
+.overlay {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #131313;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s ease;
+    z-index: -1;
+}
+
+.overlay.active {
+    opacity: 1;
+}
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+/* Responsive for large than 575px screen */
+@media (min-width: 575px) {
+
+    .wrapper.active .container {
+        transform: scale(1.1);
+    }
+
+    .expand_restore_icon {
+        transform: scale(1.1);
+        margin-bottom: 5px;
+    }
+    
+    .timer_container {
+        width: 80%;
+        transform: scale(1.1);
+    }
+    
+    .buttons {
+        width: 80%;
+        transform: scale(1.1);
+    }
+
+    .mark_section {
+        width: 90%;
+    }
+    
+}
+
+/* Responsive for large than 768px screen */
+@media (min-width: 768px) {
+
+    .wrapper.active .container {
+        transform: scale(1.15);
+    }
+
+    .expand_restore_icon {
+        transform: scale(1.2);
+        margin-bottom: 10px;
+    }
+    
+    .timer_container {
+        width: 60%;
+        transform: scale(1.2);
+    }
+    
+    .buttons {
+        width: 60%;
+        transform: scale(1.1);
+        margin-block: 40px;
+    }
+
+    .mark_section {
+        width: 80%;
+    }
+    
+}
+
+/* Responsive for large than 992px screen */
+@media (min-width: 992px) {
+
+    .wrapper.active .container {
+        transform: scale(1.15);
+    }
+
+    .wrapper.active {
+        position: absolute;
+        top: 50%;
+        transform: translateY(50%) scale(1.2);
+    }
+
+    .expand_restore_icon {
+        transform: scale(1.3);
+        margin-bottom: 15px;
+    }
+    
+    .timer_container {
+        width: 50%;
+        transform: scale(1.3);
+    }
+    
+    .buttons {
+        width: 50%;
+        transform: scale(1.2);
+    }
+
+    .mark_section {
+        width: 60%;
+    }
+    
+}
+
+/* Responsive for large than 1200px screen */
+@media (min-width: 1200px) {
+
+    .wrapper.active .container {
+        transform: scale(1.15);
+    }
+    
+    .wrapper.active {
+        position: absolute;
+        top: 50%;
+        transform: translateY(50%) scale(1.5);
+    }
+
+    .expand_restore_icon {
+        transform: scale(1.3);
+        margin-bottom: 25px;
+    }
+    
+    .timer_container {
+        width: 50%;
+        transform: scale(1.4);
+    }
+
+    .buttons {
+        margin-block: 45px;
+    }
+    
+}

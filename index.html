@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="StopWatch">
+    <meta name="description" content="This is a stopwatch website.">
+    <!-- Favicon -->
+    <link rel="stylesheet icon" href="./favicon.svg" type="image/svg+xml">
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="style.css">
+    <!-- BOXICON LINK -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- TITLE -->
+    <title>StopWatch</title>
+
+</head>
+
+<body>
+
+    <!-- WRAPPER -->
+    <div class="wrapper" data-wrapper>
+        <div class="container">
+
+            <!-- EXAPAND AND RESTORE ICON -->
+            <div class="expand_restore_icon">
+                <!-- EXPAND ICON -->
+                <div class="expand" title="Expand" data-expand>
+                    <i class='bx bx-chevron-right right'></i>
+                    <i class='bx bx-chevron-left left'></i>
+                </div>
+            </div>
+
+            <!-- STOP WATCH TIMER -->
+            <div class="timer_container">
+                <!-- HOUR -->
+                <div class="hour_section timer_wrapper" data-timer-wrapper>
+                    <div class="hour time" data-hour>00</div>
+                    <p class="text">hr</p>
+                </div>
+                <!-- COLON -->
+                <div class="colon_section colon">:</div>
+                <!-- MINUTE -->
+                <div class="minute_section timer_wrapper" data-timer-wrapper>
+                    <div class="minute time" data-minute>00</div>
+                    <p class="text">min</p>
+                </div>
+                <!-- COLON -->
+                <div class="colon_section colon">:</div>
+                <!-- SECOND -->
+                <div class="second_section timer_wrapper" data-timer-wrapper>
+                    <div class="second time" data-second>00</div>
+                    <p class="text">sec</p>
+                </div>
+
+            </div>
+
+            <!-- BUTTON CONTROLER -->
+            <div class="buttons">
+                <!-- BUTTONS -->
+                <button class="btn play_pause" title="Play Pause" data-play-pause><i class='bx bx-play'></i></button>
+                <button class="btn flag" title="Mark" data-mark><i class='bx bxs-flag'></i></button>
+                <button class="btn reset deactive" title="Reset" data-reset><i class='bx bx-refresh'></i></button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MARK SECTION -->
+    <section class="mark_section" data-mark-section>
+
+        <div class="mark_container">
+
+            <!-- HEAD TITLE -->
+            <div class="mark_header">
+                <h3 class="title">Laps</h3>
+                <h3 class="title">Time</h3>
+            </div>
+
+            <!-- LIST OF MARKING -->
+            <ul class="mark_list" data-mark-list>
+                <!-- <li>
+                    <div class="mark_data" data-laps>1</div>
+                    <div class="mark_data" data-time>02:45:20</div>
+                </li> -->
+            </ul>
+
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- OVERLAY -->
+    <div class="overlay" data-overlay></div>
+
+
+    <!-- JAVASCRIPT LINK -->
+    <script src="script.js"></script>
+</body>
+
+</html>
